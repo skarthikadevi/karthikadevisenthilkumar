@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ta">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Live Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app" id="app">
+    <header>
+      <div>
+        <h1>Live Weather Dashboard</h1>
+      </div>
+
+      <div class="controls">
+        <div class="search">
+          <input id="q" type="text" placeholder="Enter city, state or country">
+          <div id="suggestions" class="suggestions"></div>
+        </div>
+        <button id="detectBtn" class="btn secondary">Detect my location</button>
+        <button id="unitBtn" class="btn">°C</button>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <div class="current">
+          <div class="icon" id="bigIcon">☀️</div>
+          <div class="details">
+            <h2 id="place">—</h2>
+            <p class="temp" id="temp">--°</p>
+            <div class="meta" id="summary">—</div>
+            <div class="row" style="margin-top:10px">
+              <div class="small">Humidity: <span id="humid">--%</span></div>
+              <div class="small">Wind: <span id="wind">-- m/s</span></div>
+              <div class="small">Updated: <span id="upd">--</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="forecast" id="forecast"></div>
+        <canvas id="spark" width="600" height="120"></canvas>
+      </section>
+
+      <section class="card">
+        <h3>Interactive</h3>
+        <div style="margin-top:8px" class="row">
+          <input id="slider" type="range" min="0" max="23" value="0" style="flex:1">
+          <div class="small">Hour: <span id="hourPreview">--:00</span></div>
+        </div>
+        <div style="margin-top:12px" class="small">Search or Detect location → Click forecast day to preview hourly chart.</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
